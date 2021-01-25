@@ -23,11 +23,17 @@ const Widget = styled.div`
 
 Widget.Header = styled.header`
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   padding: 18px 32px;
   background-color: ${({ theme }) => theme.colors.primary};
 
+  h1 {
+    font-size: 20px;
+    padding: 12px;
+    color: #ddd;
+  }
+  
   * {
     margin: 0;
   }

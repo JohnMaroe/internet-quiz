@@ -2,11 +2,20 @@ import styled from 'styled-components';
 
 const QuizBackground = styled.div`
   width: 100%;
-  background-size: cover;
+  background-size: 20% 10%;
   background-position: center;
   background-image: url(${({ backgroundImage }) => backgroundImage});
   background-color: ${({ theme }) => theme.colors.mainBg};
   flex: 1;
+
+  .internetIcon {
+    position: absolute;
+    left: -210px;
+    top: -220px;
+
+    transform: scale(30%) rotate(-30deg);
+  }
+
   @media screen and (max-width: 500px) {
     background-image: none;
     &:after {
