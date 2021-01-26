@@ -18,10 +18,15 @@ const QuizBackground = styled.div`
 
   @media screen and (max-width: 500px) {
     background-image: none;
+
+    .internetIcon {
+      display: none;
+    }
+
     &:after {
       content: "";
       background-size: cover;
-    background-position: center;
+      background-position: center;
       background-image:
         linear-gradient(transparent, ${({ theme }) => theme.colors.mainBg}),
         url(${({ backgroundImage }) => backgroundImage});
@@ -34,7 +39,8 @@ const QuizBackground = styled.div`
       right: 0;
       z-index: 1;
     }
-    *:first-child {
+
+    *:nth-child(2) {
       position: relative;
       z-index: 10;
     }
