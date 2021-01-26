@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://www.nicepng.com/png/full/6-62326_internet-internet-logo-png-black.png" alt="Internet symbol" />
+  <img src="https://www.nicepng.com/png/full/6-62326_internet-internet-logo-png-black.png" alt="Internet symbol" width=200 />
 </p>
 
 # The Internet Quiz
@@ -15,5 +15,4 @@ React ⚛️ <br />
 NextJS ⚓ <br />
 Styled Components 💅🏻 <br />
 
-Made with ❤️ by <a href="https://www.linkedin.com/in/jo%C3%A3o-maroeli-dos-santos-645314196/" target="_blank"> João Maroeli </a>. <br />
-<br /> together with <a href="https://www.alura.com.br/" target="_blank"> Alura </a>
+Made with ❤️ by <a href="https://www.linkedin.com/in/jo%C3%A3o-maroeli-dos-santos-645314196/" target="_blank"> João Maroeli </a> together with <a href="https://www.alura.com.br/" target="_blank"> Alura </a> <br />
