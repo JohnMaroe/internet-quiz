@@ -1,4 +1,6 @@
 import React from 'react';
+import { useRouter } from 'next/router';
+
 import QuizBackground from '../src/components/QuizBackground';
 import GitHubCorner from '../src/components/GitHubCorner';
 import Widget from '../src/components/Widget';
@@ -7,6 +9,8 @@ import QuizContainer from '../src/components/QuizContainer';
 import db from '../db.json';
 
 export default function Quiz() {
+  const router = useRouter();
+
   return (
     <QuizBackground backgroundImage={db.bg}>
       <img src={db.internetImg} alt="Internet Icon" className="internetIcon" />
@@ -16,7 +20,8 @@ export default function Quiz() {
             O Quiz
           </Widget.Header>
           <Widget.Content>
-            <p>Error 404, conteúdo não encontrado. Volte mais tarde?</p>
+            <p className="greetings">Fala <strong>{router.query.name}</strong>, preparado?</p>
+            <p>Error 404, conteúdo não encontrado. {'\n'} Volte mais tarde?</p>
             <a style={{ textDecoration: 'none' }} href="/">Voltar pra Home</a>
           </Widget.Content>
         </Widget>

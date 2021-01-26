@@ -53,6 +53,14 @@ Widget.Content = styled.div`
     margin-bottom: 0;
   }
 
+  .greetings {
+    font-size: 20px;
+
+    strong {
+      color: ${({ theme }) => theme.colors.wrong};
+    }
+  }
+
   ul {
     list-style: none;
     padding: 0;
