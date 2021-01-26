@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 
 // src/components/Footer/index.js
@@ -43,4 +44,4 @@ export default function Footer(props) {
       </p>
     </FooterWrapper>
   );
-} 
+}

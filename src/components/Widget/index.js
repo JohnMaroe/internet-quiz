@@ -45,6 +45,7 @@ Widget.Content = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   & > *:first-child {
     margin-top: 0;
   }
@@ -57,10 +58,26 @@ Widget.Content = styled.div`
     padding: 0;
   }
 
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  input {
+    width: 240px;
+    outline: none;
+    padding: 7.5px;
+    font-weight: 900;
+  }
+
   button {
     width: 240px;
-    color: ${( { theme } ) => theme.colors.contrastText};
-    background-color: ${( { theme } ) => theme.colors.wrong};
+    height: 40px;
+    max-height: 40px;
+    color: ${({ theme }) => theme.colors.contrastText};
+    background-color: ${({ theme }) => theme.colors.wrong};
     outline: none;
     cursor: pointer;
 
@@ -68,6 +85,12 @@ Widget.Content = styled.div`
     margin-top: 10px;
     border: none;
     border-radius: 2px;
+    overflow: hidden;
+    opacity: 1;
+
+    &[disabled] {
+      opacity: 0.5;
+    }
   }
 `;
 

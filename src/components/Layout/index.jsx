@@ -1,6 +1,9 @@
-import Head from 'next/head'
+import React from 'react';
+import Head from 'next/head';
 
-function IndexPage({ twitterHandle, description, currentURL, previewImage, siteName, pageTitle }) {
+function IndexPage({
+  twitterHandle, description, currentURL, previewImage, siteName, pageTitle,
+}) {
   return (
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +22,7 @@ function IndexPage({ twitterHandle, description, currentURL, previewImage, siteN
 
       <title>{pageTitle}</title>
     </Head>
-  )
+  );
 }
 
 export default IndexPage;

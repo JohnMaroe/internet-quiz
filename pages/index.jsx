@@ -1,5 +1,6 @@
-import styled from 'styled-components';
+import React, { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import db from '../db.json';
 
@@ -13,10 +14,19 @@ import GitHubCorner from '../src/components/GitHubCorner';
 import QuizContainer from '../src/components/QuizContainer';
 
 export default function Home() {
+  const [name, setName] = useState('');
+  const router = useRouter();
+
+  function handleFormSubmit(e) {
+    e.preventDefault();
+
+    router.push(`/quiz?name=${name}`);
+  }
+
   return (
     <>
-      <Layout 
-        twitterHandle={db.twitterHandle} 
+      <Layout
+        twitterHandle={db.twitterHandle}
         description={db.description}
         currentURL={db.currentURL}
         previewImage={db.bgShare}
@@ -36,17 +46,26 @@ export default function Home() {
             <Widget.Content>
               <p>lorem ipsum dolor sit amet...</p>
 
-              <Link href="/quiz">
-                <button>Teste o que você sabe</button>
-              </Link>
-              
+              <form onSubmit={(e) => handleFormSubmit(e)}>
+                <input
+                  type="text"
+                  placeholder="Seu nome aqui"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+
+                <button type="submit" disabled={name.length === 0}>
+                  {name.length === 0 ? 'Teste o que você sabe!' : `Teste o que você sabe, ${name}!`}
+                </button>
+              </form>
+
             </Widget.Content>
           </Widget>
           <Widget>
             <Widget.Header>
               <h1>Quiz da galera</h1>
             </Widget.Header>
-            
+
             <Widget.Content>
               <p>lorem ipsum dolor sit amet...</p>
             </Widget.Content>
@@ -54,7 +73,7 @@ export default function Home() {
 
           <Footer />
         </QuizContainer>
-        
+
         <GitHubCorner projectUrl="https://github.com/JohnMaroe/internet-quiz" />
 
       </QuizBackground>

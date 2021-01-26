@@ -14,6 +14,7 @@ const QuizBackground = styled.div`
     top: -220px;
 
     transform: scale(30%) rotate(-30deg);
+    user-select: none;
   }
 
   @media screen and (max-width: 500px) {
