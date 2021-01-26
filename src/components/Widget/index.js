@@ -41,15 +41,33 @@ Widget.Header = styled.header`
 
 Widget.Content = styled.div`
   padding: 24px 32px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   & > *:first-child {
     margin-top: 0;
   }
   & > *:last-child {
     margin-bottom: 0;
   }
+
   ul {
     list-style: none;
     padding: 0;
+  }
+
+  button {
+    width: 240px;
+    color: ${( { theme } ) => theme.colors.contrastText};
+    background-color: ${( { theme } ) => theme.colors.wrong};
+    outline: none;
+    cursor: pointer;
+
+    padding: 5px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 2px;
   }
 `;
 

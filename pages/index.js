@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import Link from 'next/link';
+
 import db from '../db.json';
 
 import Layout from '../src/components/Layout';
@@ -8,19 +10,7 @@ import QuizLogo from '../src/components/QuizLogo';
 import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
-
-const QuizContainer = styled.div`
-  width: 100%;
-  max-width: 350px;
-  padding-top: 80px;
-  margin: auto 10%;
-  float: right;
-
-  @media screen and (max-width: 500px) {
-    margin: auto;
-    padding: 15px;
-  }
-`;
+import QuizContainer from '../src/components/QuizContainer';
 
 export default function Home() {
   return (
@@ -40,11 +30,16 @@ export default function Home() {
           <QuizLogo />
           <Widget>
             <Widget.Header>
-              <h1>The legend of zelda</h1>
+              <h1>The Internet Quiz</h1>
             </Widget.Header>
 
             <Widget.Content>
               <p>lorem ipsum dolor sit amet...</p>
+
+              <Link href="/quiz">
+                <button>Teste o que você sabe</button>
+              </Link>
+              
             </Widget.Content>
           </Widget>
           <Widget>

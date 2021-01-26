@@ -2,8 +2,8 @@
   "bg": "https://www.toptal.com/designers/subtlepatterns/patterns/binding_dark.png",
   "bgShare": "https://images.unsplash.com/photo-1523274620588-4c03146581a1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80",
   "internetImg": "https://www.nicepng.com/png/full/6-62326_internet-internet-logo-png-black.png",
-  "title": "Quiz CSS da Alura",
-  "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
+  "title": "The Internet Quiz",
+  "description": "O quanto você sabe sobre a internet e sua história? Entre e teste seus conhecimentos!",
   "twitterHandle": "@JohnYouIdiot",
   "currentURL": "https://internet-quiz.johnmaroeli.vercel.app/",
   "questions": [
