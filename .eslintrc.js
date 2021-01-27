@@ -20,5 +20,6 @@ module.exports = {
   rules: {
     'react/jsx-props-no-spreading': 'off',
     'react/jsx-one-expression-per-line': 'off',
+    'linebreak-style': 'off',
   },
 };

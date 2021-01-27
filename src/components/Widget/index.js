@@ -72,33 +72,23 @@ Widget.Content = styled.div`
     justify-content: center;
     align-items: center;
   }
+`;
 
-  input {
-    width: 240px;
-    outline: none;
-    padding: 7.5px;
-    font-weight: 900;
-  }
-
-  button {
-    width: 240px;
-    height: 40px;
-    max-height: 40px;
-    color: ${({ theme }) => theme.colors.contrastText};
-    background-color: ${({ theme }) => theme.colors.wrong};
-    outline: none;
-    cursor: pointer;
-
-    padding: 5px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 2px;
-    overflow: hidden;
-    opacity: 1;
-
-    &[disabled] {
-      opacity: 0.5;
-    }
+Widget.Topic = styled.a`
+  outline: 0;
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.contrastText};
+  background-color: ${({ theme }) => `${theme.colors.primary}40`};
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border-radius: ${({ theme }) => theme.borderRadius};
+  transition: .3s;
+  display: block;
+  
+  &:hover,
+  &:focus {
+    opacity: .5;
   }
 `;
 

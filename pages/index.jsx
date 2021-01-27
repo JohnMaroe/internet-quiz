@@ -11,6 +11,8 @@ import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
 import QuizContainer from '../src/components/QuizContainer';
+import Input from '../src/components/Input';
+import Button from '../src/components/Button';
 
 export default function Home() {
   const [name, setName] = useState('');
@@ -46,16 +48,15 @@ export default function Home() {
               <p>lorem ipsum dolor sit amet...</p>
 
               <form onSubmit={(e) => handleFormSubmit(e)}>
-                <input
-                  type="text"
+                <Input
                   placeholder="Seu nome aqui"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
 
-                <button type="submit" disabled={name.length === 0}>
+                <Button type="submit" disabled={name.length === 0}>
                   {name.length === 0 ? 'Teste o que você sabe!' : `Teste o que você sabe, ${name}!`}
-                </button>
+                </Button>
               </form>
 
             </Widget.Content>
