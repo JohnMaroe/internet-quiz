@@ -75,20 +75,42 @@ Widget.Content = styled.div`
 `;
 
 Widget.Topic = styled.a`
-  outline: 0;
-  text-decoration: none;
+  position: relative;
+
   color: ${({ theme }) => theme.colors.contrastText};
   background-color: ${({ theme }) => `${theme.colors.primary}40`};
-  padding: 10px 15px;
-  margin-bottom: 8px;
-  cursor: pointer;
+  outline: 0;
+  text-decoration: none;
   border-radius: ${({ theme }) => theme.borderRadius};
+
+  padding: 12px 24px;
+  margin-bottom: 10px;
   transition: .3s;
   display: block;
+  
+  cursor: pointer;
   
   &:hover,
   &:focus {
     opacity: .5;
+  }
+
+  input {
+    margin-right: 16px;
+    display: none;
+  }
+
+  i {
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    font-size: 12px;
+    display: none;
+  }
+
+  & input:checked ~ i {
+    display: block;
+    color: ${({ theme }) => theme.colors.wrong};
   }
 `;
 

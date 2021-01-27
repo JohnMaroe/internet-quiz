@@ -7,22 +7,9 @@ import GitHubCorner from '../src/components/GitHubCorner';
 import Widget from '../src/components/Widget';
 import QuizContainer from '../src/components/QuizContainer';
 import Button from '../src/components/Button';
+import LoadingScreen from '../src/components/LoadingScreen';
 
 import db from '../db.json';
-
-function LoadingWidget() {
-  return (
-    <Widget>
-      <Widget.Header>
-        Carregando...
-      </Widget.Header>
-
-      <Widget.Content>
-        [Desafio do Loading]
-      </Widget.Content>
-    </Widget>
-  );
-}
 
 function QuestionWidget({
   question,
@@ -65,11 +52,11 @@ function QuestionWidget({
                 htmlFor={alternativeId}
               >
                 <input
-                  style={{ display: 'none' }}
                   id={alternativeId}
                   name={questionId}
                   type="radio"
                 />
+                <i className="fas fa-check" />
                 {alternative}
               </Widget.Topic>
             );
@@ -110,7 +97,7 @@ export default function Quiz() {
   useEffect(() => {
     setTimeout(() => {
       setScreenState(screenStates.QUIZ);
-    }, 1 * 1000);
+    }, 1 * 1500);
   }, []);
 
   return (
@@ -130,7 +117,7 @@ export default function Quiz() {
           />
         )}
 
-        {screenState === screenStates.LOADING && <LoadingWidget />}
+        {screenState === screenStates.LOADING && <LoadingScreen />}
 
         {screenState === screenStates.RESULT && <div>Vc acertou</div>}
 
