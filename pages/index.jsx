@@ -13,6 +13,7 @@ import GitHubCorner from '../src/components/GitHubCorner';
 import QuizContainer from '../src/components/QuizContainer';
 import Input from '../src/components/Input';
 import Button from '../src/components/Button';
+import OtherQuizes from '../src/components/OtherQuizes/index';
 
 export default function Home() {
   const [name, setName] = useState('');
@@ -45,7 +46,8 @@ export default function Home() {
             </Widget.Header>
 
             <Widget.Content>
-              <p>lorem ipsum dolor sit amet...</p>
+              <p style={{ textDecoration: 'underline' }}>Bora começar?</p>
+              <p style={{ marginBottom: '24px' }}>Coloque seu nome aqui pra saber sua score depois.</p>
 
               <form onSubmit={(e) => handleFormSubmit(e)}>
                 <Input
@@ -63,11 +65,13 @@ export default function Home() {
           </Widget>
           <Widget>
             <Widget.Header>
-              <h1>Quiz da galera</h1>
+              <h1>Quizes da galera</h1>
             </Widget.Header>
 
             <Widget.Content>
-              <p>lorem ipsum dolor sit amet...</p>
+              <OtherQuizes as="a" href={db.external[0]}>1</OtherQuizes>
+              <OtherQuizes as="a" href={db.external[1]}>2</OtherQuizes>
+              <OtherQuizes as="a" href={db.external[2]}>3</OtherQuizes>
             </Widget.Content>
           </Widget>
 

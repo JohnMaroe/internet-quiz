@@ -40,7 +40,7 @@ Widget.Header = styled.header`
 `;
 
 Widget.Content = styled.div`
-  padding: 24px 32px 32px 32px;
+  padding: 24px 32px 24px 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -92,7 +92,7 @@ Widget.Topic = styled.a`
   
   &:hover,
   &:focus {
-    opacity: .5;
+    opacity: .7;
   }
 
   input {

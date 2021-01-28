@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 
+// Components
 import QuizBackground from '../src/components/QuizBackground';
 import GitHubCorner from '../src/components/GitHubCorner';
 import Widget from '../src/components/Widget';
@@ -94,10 +95,14 @@ export default function Quiz() {
     }
   }
 
+  function handleGoToResult() {
+    router.push(`/result?name=${router.query.name}`);
+  }
+
   useEffect(() => {
     setTimeout(() => {
       setScreenState(screenStates.QUIZ);
-    }, 1 * 1500);
+    }, 1 * 1250);
   }, []);
 
   return (
@@ -107,19 +112,19 @@ export default function Quiz() {
       <QuizContainer>
 
         {screenState === screenStates.QUIZ
-        && (
-          <QuestionWidget
-            question={question}
-            questionIndex={questionIndex}
-            router={router}
-            onFormSubmit={onFormSubmit}
-            totalQuestions={totalQuestions}
-          />
-        )}
+          && (
+            <QuestionWidget
+              question={question}
+              questionIndex={questionIndex}
+              router={router}
+              onFormSubmit={onFormSubmit}
+              totalQuestions={totalQuestions}
+            />
+          )}
 
         {screenState === screenStates.LOADING && <LoadingScreen />}
 
-        {screenState === screenStates.RESULT && <div>Vc acertou</div>}
+        {screenState === screenStates.RESULT && handleGoToResult()}
 
       </QuizContainer>
 

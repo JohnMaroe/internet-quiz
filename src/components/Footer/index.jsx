@@ -3,6 +3,13 @@ import styled from 'styled-components';
 
 // src/components/Footer/index.js
 const FooterWrapper = styled.footer`
+  position: absolute;
+  left: 55px;
+  bottom: 40px;
+
+  max-width: 340px;
+  max-height: 106px;
+
   background-color: #00000070;
   padding: 20px;
   display: flex;

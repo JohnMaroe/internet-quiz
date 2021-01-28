@@ -36,6 +36,9 @@ export default function App({ Component, pageProps }) {
         <link key="appfontConnect" rel="preconnect" href="https://fonts.gstatic.com" />
         <link key="appfont" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css" />
+        <title key="pageTitle">The Internet Quiz</title>
+        <meta key="pageViewPort" name="viewport" content="width=device-width, initial-scale=1" />
+        <meta key="pageCharSet" charSet="utf-8" />
       </Head>
 
       <ThemeProvider theme={theme}>
