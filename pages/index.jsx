@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 import db from '../db.json';
@@ -24,6 +24,10 @@ export default function Home() {
 
     router.push(`/quiz?name=${name}`);
   }
+
+  useEffect(() => {
+    localStorage.removeItem('results');
+  }, []);
 
   return (
     <>

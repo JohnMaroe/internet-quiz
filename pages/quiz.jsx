@@ -9,6 +9,7 @@ import Widget from '../src/components/Widget';
 import QuizContainer from '../src/components/QuizContainer';
 import Button from '../src/components/Button';
 import LoadingScreen from '../src/components/LoadingScreen';
+import AlternativesForm from '../src/components/AlternativesForm';
 
 import db from '../db.json';
 
@@ -19,7 +20,24 @@ function QuestionWidget({
   totalQuestions,
   onFormSubmit,
 }) {
+  const [selectedAlternative, setSelectedAlternative] = useState(undefined);
+  const [isQuestionSubmited, setIsQuestionSubmited] = React.useState(false);
+
   const questionId = `question__${questionIndex}`;
+  const isCorrect = selectedAlternative === question.answer;
+  const hasAlternativeSelected = selectedAlternative !== undefined;
+
+  function addToLocalStorageArray(arrayName, newValue) {
+    let existing = localStorage.getItem(arrayName);
+    existing = existing ? existing.split(',') : [];
+
+    existing.push(newValue);
+    localStorage.setItem(arrayName, existing.toString());
+  }
+
+  function handleAnswer(result) {
+    addToLocalStorageArray('results', result);
+  }
 
   return (
     <Widget>
@@ -39,22 +57,39 @@ function QuestionWidget({
         <h2>{question.title}</h2>
         <p>{question.description}</p>
 
-        <form onSubmit={(e) => {
+        <AlternativesForm onSubmit={(e) => {
           e.preventDefault();
-          onFormSubmit();
+          if (isCorrect) {
+            handleAnswer(true);
+          } else {
+            handleAnswer(false);
+          }
+          setIsQuestionSubmited(true);
+
+          setTimeout(() => {
+            onFormSubmit();
+            setIsQuestionSubmited(false);
+            setSelectedAlternative(undefined);
+          }, 1.35 * 1000);
         }}
         >
-          {question.alternatives.map((alternative, index) => {
-            const alternativeId = `alternative__${index}`;
+          {question.alternatives.map((alternative, alternativeIndex) => {
+            const alternativeId = `alternative__${alternativeIndex}`;
+            const alternativeStatus = isCorrect ? 'SUCCESS' : 'ERROR';
+            const isSelected = selectedAlternative === alternativeIndex;
 
             return (
               <Widget.Topic
                 as="label"
+                key={alternativeId}
                 htmlFor={alternativeId}
+                data-selected={isSelected}
+                data-status={isQuestionSubmited && alternativeStatus}
               >
                 <input
                   id={alternativeId}
                   name={questionId}
+                  onChange={() => setSelectedAlternative(alternativeIndex)}
                   type="radio"
                 />
                 <i className="fas fa-check" />
@@ -63,10 +98,10 @@ function QuestionWidget({
             );
           })}
 
-          <Button type="submit">
+          <Button type="submit" disabled={!hasAlternativeSelected}>
             Confirmar
           </Button>
-        </form>
+        </AlternativesForm>
 
       </Widget.Content>
     </Widget>
@@ -102,7 +137,7 @@ export default function Quiz() {
   useEffect(() => {
     setTimeout(() => {
       setScreenState(screenStates.QUIZ);
-    }, 1 * 1250);
+    }, 1 * 1310);
   }, []);
 
   return (

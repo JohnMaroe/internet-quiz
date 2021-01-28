@@ -19,6 +19,10 @@ const Widget = styled.div`
     font-weight: 400;
     line-height: 1;
   }
+
+  strong {
+    color: ${({ theme }) => theme.colors.wrong};
+  }
 `;
 
 Widget.Header = styled.header`
@@ -55,10 +59,6 @@ Widget.Content = styled.div`
 
   .greetings {
     font-size: 20px;
-
-    strong {
-      color: ${({ theme }) => theme.colors.wrong};
-    }
   }
 
   ul {
