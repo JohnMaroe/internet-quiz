@@ -8,30 +8,93 @@
   "currentURL": "https://internet-quiz.johnmaroeli.vercel.app/",
   "questions": [
     {
-      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-      "title": "Como fazer um seletor por id via CSS?",
+      "image": "https://media.giphy.com/media/9JgeSP0jlRAVBOG9FD/giphy.gif",
+      "title": "Em qual região do mundo há mais usuários na internet?",
       "description": "Essa é pra aquecer",
-      "answer": 2,
+      "answer": 1,
       "alternatives": [
-        ".elemento",
-        "*elemento",
-        "#elemento",
-        "%elemento"
+        "Europa",
+        "Ásia",
+        "Americas",
+        "Antártica"
       ]
     },
     {
-      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-      "title": "Como fazer um background gradiente com css?",
-      "description": "Faz tempo em haha",
+      "image": "https://media.giphy.com/media/kd9BlRovbPOykLBMqX/giphy.gif",
+      "title": "Onde e em qual contexto o surgiu essa ideia de internet?",
+      "description": "Foi tipo... ontem",
       "answer": 0,
       "alternatives": [
-         "background: linear-gradient(#e66465, #9198e5);",
-         "background: gradient(#e66465, #9198e5);"
+         "Estados Unidos, Segunda Guerra Mundial",
+         "Japão, Era Meiji",
+         "Inglaterra, Terceira Revolução Industrial",
+         "Alemanha, Segunda Guerra Mundial"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/W6cAjLEUD8xGCIc5GY/giphy.gif",
+      "title": "Atualmente, qual a principal meio que a internet se conecta ao redor do mundo?",
+      "description": "Tecnologia!",
+      "answer": 0,
+      "alternatives": [
+         "Rede de cabos de fibra óptica nos oceanos",
+         "Satelites",
+         "Pombo Correio",
+         "Wi-fi"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/l41lVsYDBC0UVQJCE/giphy.gif",
+      "title": "Qual desses sites tem mais visitantes mensais?",
+      "description": "Essa vai ter que ir no chute hein.",
+      "answer": 3,
+      "alternatives": [
+         "Wikipedia",
+         "Twitch",
+         "Instagram",
+         "Youtube",
+         "Twitter"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/a5viI92PAF89q/giphy.gif",
+      "title": "Por qual motivo foi necessária a criação do IPv6 se já tinha o IPv4?",
+      "description": "Questões mais técnicas agora",
+      "answer": 1,
+      "alternatives": [
+         "Mais segurança",
+         "Precisou ajustar ao grande crescimento de conectados na internet",
+         "Precisavam criar um sistema mais moderno",
+         "Ficou muito caro manter"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/lKXEBR8m1jWso/giphy.gif",
+      "title": "Qual das opções é um exemplo de um ataque de \"phishing\"?",
+      "description": "Essa palavra parece familiar?",
+      "answer": 3,
+      "alternatives": [
+         "Um email que contem um link malicioso e é disfarçado para parecer um email de outra pessoa",
+         "Um site fake que parece idêntico ao original para roubar informações de login do usuário",
+         "Uma notificação que contém informações falsas e levam o usuário a clicar num link malicioso ou passar informações",
+         "Todas as alternativas"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/lKXEBR8m1jWso/giphy.gif",
+      "title": "Como é possível todos os jogadores conseguirem jogar juntos em um jogo multiplayer?",
+      "description": "Você que joga ai",
+      "answer": 3,
+      "alternatives": [
+         "O server recebe TODOS os dados que estão acontecendo ali e repassa para os jogadores.",
+         "Apenas informações importantes (ações feitas pelos jogadores) são repassadas",
+         "",
+         "Todas as alternativas"
       ]
     }
   ],
   "external": [
-    "https://internet-quiz.johnmaroeli.vercel.app/",
+    "https://ghibliquiz.ygoryamanaca.vercel.app/",
     "https://internet-quiz.johnmaroeli.vercel.app/",
     "https://internet-quiz.johnmaroeli.vercel.app/"
   ],

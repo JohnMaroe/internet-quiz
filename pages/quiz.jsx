@@ -52,7 +52,7 @@ function QuestionWidget({
       />
 
       <Widget.Content>
-        <p className="greetings">Fala <strong>{router.query.name}</strong>, preparado?</p>
+        {questionIndex === 0 && <p className="greetings">Fala <strong>{router.query.name}</strong>, preparado?</p>}
 
         <h2>{question.title}</h2>
         <p>{question.description}</p>
@@ -67,9 +67,9 @@ function QuestionWidget({
           setIsQuestionSubmited(true);
 
           setTimeout(() => {
+            setSelectedAlternative(undefined);
             onFormSubmit();
             setIsQuestionSubmited(false);
-            setSelectedAlternative(undefined);
           }, 1.35 * 1000);
         }}
         >
@@ -91,6 +91,7 @@ function QuestionWidget({
                   name={questionId}
                   onChange={() => setSelectedAlternative(alternativeIndex)}
                   type="radio"
+                  value={selectedAlternative}
                 />
                 <i className="fas fa-check" />
                 {alternative}
