@@ -13,6 +13,7 @@ import db from '../db.json';
 
 export default function Result() {
   const [storageResult, setStorageResult] = useState([]);
+  const [windowSize, setWindowSize] = useState(undefined);
   const router = useRouter();
 
   useEffect(() => {
@@ -50,6 +51,13 @@ export default function Result() {
   useEffect(() => {
     frame();
   }, []);
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setWindowSize(window.innerWidth);
+    }
+  }, []);
+
+  console.log(windowSize);
 
   return (
     <>
@@ -86,32 +94,34 @@ export default function Result() {
           </Widget>
         </QuizContainer>
 
-        <QuizContainer
-          style={{
-            position: 'absolute',
-            right: '0',
-          }}
-        >
-          <Widget
-            as={motion.section}
-            transition={{ delay: 3.5, duration: 0.5 }}
-            variants={{
-              show: { opacity: 1 },
-              hidden: { opacity: 0 },
+        {windowSize > 500 && (
+          <QuizContainer
+            style={{
+              position: 'absolute',
+              right: '0',
             }}
-            initial="hidden"
-            animate="show"
           >
-            <Widget.Content>
-              <div>
-                <h3><a href="https://www.linkedin.com/in/jo%C3%A3o-maroeli-dos-santos-645314196/" target="_blank" rel="noreferrer"><i className="fab fa-github-square" /> Github</a></h3>
-                <h3><a href="https://github.com/JohnMaroe" target="_blank" rel="noreferrer"><i className="fab fa-linkedin" /> LinkedIn</a></h3>
-                <h3><a href="https://www.alura.com.br/" target="_blank" rel="noreferrer"><i className="fas fa-code" /> Alura</a></h3>
-              </div>
-              <p style={{ marginTop: '40px' }}>Made with love by John &#10084;</p>
-            </Widget.Content>
-          </Widget>
-        </QuizContainer>
+            <Widget
+              as={motion.section}
+              transition={{ delay: 3.5, duration: 0.5 }}
+              variants={{
+                show: { opacity: 1 },
+                hidden: { opacity: 0 },
+              }}
+              initial="hidden"
+              animate="show"
+            >
+              <Widget.Content>
+                <div>
+                  <h3><a href="https://www.linkedin.com/in/jo%C3%A3o-maroeli-dos-santos-645314196/" target="_blank" rel="noreferrer"><i className="fab fa-github-square" /> Github</a></h3>
+                  <h3><a href="https://github.com/JohnMaroe" target="_blank" rel="noreferrer"><i className="fab fa-linkedin" /> LinkedIn</a></h3>
+                  <h3><a href="https://www.alura.com.br/" target="_blank" rel="noreferrer"><i className="fas fa-code" /> Alura</a></h3>
+                </div>
+                <p style={{ marginTop: '40px' }}>Made with love by John &#10084;</p>
+              </Widget.Content>
+            </Widget>
+          </QuizContainer>
+        )}
 
         <GitHubCorner projectUrl="/" goBack />
 

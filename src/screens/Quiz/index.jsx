@@ -59,6 +59,7 @@ function QuestionWidget({
   router,
   totalQuestions,
   onFormSubmit,
+  addResults,
 }) {
   const [selectedAlternative, setSelectedAlternative] = useState(undefined);
   const [isQuestionSubmited, setIsQuestionSubmited] = React.useState(false);
@@ -107,6 +108,7 @@ function QuestionWidget({
           setIsQuestionSubmited(true);
 
           setTimeout(() => {
+            addResults(isCorrect);
             setSelectedAlternative(undefined);
             onFormSubmit();
             setIsQuestionSubmited(false);
@@ -157,10 +159,18 @@ const screenStates = {
 export default function Quiz({ externalQuestions, externalBg }) {
   const [screenState, setScreenState] = useState(screenStates.LOADING);
   const [questionIndex, setQuestionIndex] = useState(0);
+  const [results, setResults] = useState([]);
   const router = useRouter();
 
   const totalQuestions = externalQuestions.length;
   const question = externalQuestions[questionIndex];
+
+  function addResults(result) {
+    setResults([
+      ...results,
+      result,
+    ]);
+  }
 
   function onFormSubmit() {
     const nextQuestion = questionIndex + 1;
@@ -178,9 +188,19 @@ export default function Quiz({ externalQuestions, externalBg }) {
   }, []);
 
   return (
-    <QuizBackground backgroundImage={externalBg.bg}>
+    <QuizBackground
+      backgroundImage={externalBg.bg}
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
 
-      <QuizContainer>
+      <QuizContainer style={{
+        float: 'none',
+      }}
+      >
 
         {screenState === screenStates.QUIZ
           && (
@@ -190,12 +210,13 @@ export default function Quiz({ externalQuestions, externalBg }) {
               router={router}
               onFormSubmit={onFormSubmit}
               totalQuestions={totalQuestions}
+              addResults={addResults}
             />
           )}
 
         {screenState === screenStates.LOADING && <LoadingWidget />}
 
-        {screenState === screenStates.RESULT && <ResultWidget />}
+        {screenState === screenStates.RESULT && <ResultWidget results={results} />}
 
       </QuizContainer>
 

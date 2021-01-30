@@ -136,6 +136,14 @@ Widget.Topic = styled.a`
     display: block;
     color: ${({ theme }) => theme.colors.wrong};
   }
+
+  @media screen and (max-width: 500px) {
+    i {
+      position: absolute;
+      left: -10px;
+      top: -10px;
+    }
+  }
 `;
 
 export default Widget;

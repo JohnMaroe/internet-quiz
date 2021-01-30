@@ -20,6 +20,10 @@ const Wrapper = styled.div`
     }
   }
 
+  @media (max-width:500px) {
+    display: none;
+  }
+
   @keyframes hand-wave{
     0%,100%{transform:rotate(0)}
     20%,60%{transform:rotate(-25deg)}
@@ -58,7 +62,7 @@ export default function GitHubCorner({ projectUrl, goBack }) {
       && (
         <a href={projectUrl} rel="noreferrer">
           <SVGWrapper className="githubCorner" width="80" height="80" viewBox="0 0 250 250" aria-hidden="true">
-            <path d="M0,0 L115,115 L142,142 L250,250 L250,0 Z" />
+            <path d="M0,0 L115,115 L142,142 L250,250 L250,0 Z" className="hand" />
           </SVGWrapper>
           <i className="far fa-hand-point-left" />
         </a>

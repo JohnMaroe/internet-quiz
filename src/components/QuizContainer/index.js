@@ -12,7 +12,7 @@ const QuizContainer = styled.div`
     margin: auto;
     padding: 15px;
     float: none;
-    margin-top: 50px;
+    margin-top: 10px;
   }
 `;
 

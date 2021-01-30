@@ -31,6 +31,10 @@ const FooterWrapper = styled.footer`
       text-decoration: underline;
     }
   }
+
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
 `;
 
 export default function Footer(props) {
