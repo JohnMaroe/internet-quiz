@@ -6,6 +6,7 @@ const QuizContainer = styled.div`
   padding-top: 55px;
   margin: auto 10%;
   float: right;
+  overflow: hidden;
 
   @media screen and (max-width: 500px) {
     margin: auto;

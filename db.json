@@ -71,32 +71,44 @@
     {
       "image": "https://media.giphy.com/media/lKXEBR8m1jWso/giphy.gif",
       "title": "Qual das opções é um exemplo de um ataque de \"phishing\"?",
-      "description": "Essa palavra parece familiar?",
+      "description": "",
       "answer": 3,
       "alternatives": [
-         "Um email que contem um link malicioso e é disfarçado para parecer um email de outra pessoa",
-         "Um site fake que parece idêntico ao original para roubar informações de login do usuário",
-         "Uma notificação que contém informações falsas e levam o usuário a clicar num link malicioso ou passar informações",
+         "Um email que contem um link malicioso e disfarçado parecendo um email de outra pessoa",
+         "Um site fake idêntico ao original para roubar informações de login",
+         "Notificação falsa que levam o usuário a passar informações pessoais",
          "Todas as alternativas"
       ]
     },
     {
-      "image": "https://media.giphy.com/media/lKXEBR8m1jWso/giphy.gif",
-      "title": "Como é possível todos os jogadores conseguirem jogar juntos em um jogo multiplayer?",
-      "description": "Você que joga ai",
-      "answer": 3,
+      "image": "https://media.giphy.com/media/pOKrXLf9N5g76/giphy.gif",
+      "title": "Qual desses termos são protocolos importantes em transmissão de dados?",
+      "description": "Pra você que manja.",
+      "answer": 2,
       "alternatives": [
-         "O server recebe TODOS os dados que estão acontecendo ali e repassa para os jogadores.",
-         "Apenas informações importantes (ações feitas pelos jogadores) são repassadas",
-         "",
-         "Todas as alternativas"
+        "HTTP, DNS, Internet provider",
+        "Backend, localStorage, URL",
+        "TCP, IP, HTTP ",
+        "Cookie, JS, CSS"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/111ebonMs90YLu/giphy.gif",
+      "title": "Qual a quantidade de dados, em bytes, transmitida todos os anos?",
+      "description": "Nem da pra imaginar esses números ai, meu amigo e amiga...",
+      "answer": 1,
+      "alternatives": [
+        "Gigabytes",
+        "Zettabytes",
+        "Petabytes",
+        "Yottabytes"
       ]
     }
   ],
   "external": [
     "https://ghibliquiz.ygoryamanaca.vercel.app/",
     "https://internet-quiz.johnmaroeli.vercel.app/",
-    "https://internet-quiz.johnmaroeli.vercel.app/"
+    "www.google.com"
   ],
   "theme": {
     "colors": {

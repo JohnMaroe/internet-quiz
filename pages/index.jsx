@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
 
 import db from '../db.json';
 
@@ -14,6 +15,7 @@ import QuizContainer from '../src/components/QuizContainer';
 import Input from '../src/components/Input';
 import Button from '../src/components/Button';
 import OtherQuizes from '../src/components/OtherQuizes/index';
+import Link from '../src/components/Link';
 
 export default function Home() {
   const [name, setName] = useState('');
@@ -44,7 +46,16 @@ export default function Home() {
         <img src={db.internetImg} alt="Internet Icon" className="internetIcon" />
         <QuizContainer>
           <QuizLogo />
-          <Widget>
+          <Widget
+            as={motion.section}
+            transition={{ delay: 0, duration: 0.5 }}
+            variants={{
+              show: { opacity: 1 },
+              hidden: { opacity: 0 },
+            }}
+            initial="hidden"
+            animate="show"
+          >
             <Widget.Header>
               <h1>The Internet Quiz</h1>
             </Widget.Header>
@@ -67,12 +78,23 @@ export default function Home() {
 
             </Widget.Content>
           </Widget>
-          <Widget>
+          <Widget
+            as={motion.section}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            variants={{
+              show: { opacity: 1, y: '0' },
+              hidden: { opacity: 0, y: '100%' },
+            }}
+            initial="hidden"
+            animate="show"
+          >
             <Widget.Header style={{ padding: '9px' }}>
               <h1>Quizes da galera</h1>
             </Widget.Header>
 
             <Widget.Content>
+
+              <p>Não esqueça de colocar seu nome!</p>
 
               {db.external.map((link) => {
                 const [projectName, githubUser] = link
@@ -83,9 +105,14 @@ export default function Home() {
 
                 return (
                   <OtherQuizes
-                    as="a"
-                    href={link}
+                    as={Link}
+                    href={`/quiz/${projectName}___${githubUser}`}
                     key={link}
+                    onClick={(e) => {
+                      if (name.length === 0) {
+                        e.preventDefault();
+                      }
+                    }}
                   >
                     {`${githubUser}: ${projectName}`}
                   </OtherQuizes>
@@ -95,7 +122,16 @@ export default function Home() {
             </Widget.Content>
           </Widget>
 
-          <Footer />
+          <Footer
+            as={motion.footer}
+            transition={{ delay: 0.4, duration: 0.5 }}
+            variants={{
+              show: { opacity: 1 },
+              hidden: { opacity: 0 },
+            }}
+            initial="hidden"
+            animate="show"
+          />
         </QuizContainer>
 
         <GitHubCorner projectUrl="https://github.com/JohnMaroe/internet-quiz" />

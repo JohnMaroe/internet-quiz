@@ -72,10 +72,32 @@ Widget.Content = styled.div`
     justify-content: center;
     align-items: center;
   }
+
+  div {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-direction: column;
+
+    h3 {
+      font-size: 24px;
+
+      i {
+        margin-right: 20px;
+        color: #ddd;
+        font-size: 24px;
+      }
+      a {
+        color: ${({ theme }) => theme.colors.contrastText};
+        text-decoration: none;
+      }
+    }
+  }
 `;
 
 Widget.Topic = styled.a`
   position: relative;
+  width: 290px;
 
   color: ${({ theme }) => theme.colors.contrastText};
   background-color: ${({ theme }) => `${theme.colors.primary}40`};
@@ -86,7 +108,9 @@ Widget.Topic = styled.a`
   padding: 12px 24px;
   margin-bottom: 10px;
   transition: .3s;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: left;
   
   cursor: pointer;
   

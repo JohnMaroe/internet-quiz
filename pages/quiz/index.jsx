@@ -3,15 +3,16 @@ import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 
 // Components
-import QuizBackground from '../src/components/QuizBackground';
-import GitHubCorner from '../src/components/GitHubCorner';
-import Widget from '../src/components/Widget';
-import QuizContainer from '../src/components/QuizContainer';
-import Button from '../src/components/Button';
-import LoadingScreen from '../src/components/LoadingScreen';
-import AlternativesForm from '../src/components/AlternativesForm';
+import QuizBackground from '../../src/components/QuizBackground';
+import GitHubCorner from '../../src/components/GitHubCorner';
+import Widget from '../../src/components/Widget';
+import QuizContainer from '../../src/components/QuizContainer';
+import Button from '../../src/components/Button';
+import LoadingScreen from '../../src/components/LoadingScreen';
+import AlternativesForm from '../../src/components/AlternativesForm';
+import BackLinkArrow from '../../src/components/BackLinkArrow';
 
-import db from '../db.json';
+import db from '../../db.json';
 
 function QuestionWidget({
   question,
@@ -42,6 +43,7 @@ function QuestionWidget({
   return (
     <Widget>
       <Widget.Header>
+        <BackLinkArrow href="/" />
         Pergunta {questionIndex + 1} de {`${totalQuestions}`}
       </Widget.Header>
 
@@ -90,8 +92,8 @@ function QuestionWidget({
                   id={alternativeId}
                   name={questionId}
                   onChange={() => setSelectedAlternative(alternativeIndex)}
+                  checked={isSelected}
                   type="radio"
-                  value={selectedAlternative}
                 />
                 <i className="fas fa-check" />
                 {alternative}

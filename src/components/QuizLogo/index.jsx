@@ -36,6 +36,13 @@ Logo.propTypes = {
 const QuizLogo = styled(Logo)`
   margin: auto;
   display: block;
+  animation: scale 1000ms ease;
+
+  @keyframes scale{
+    from { transform: scale(0) translateY(-100px) }
+    to { transform: scale(1) translateY(0) }
+  }
+
   @media screen and (max-width: 500px) {
     margin: 0;
   }

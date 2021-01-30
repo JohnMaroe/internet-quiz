@@ -7,6 +7,7 @@ const QuizBackground = styled.div`
   background-image: url(${({ backgroundImage }) => backgroundImage});
   background-color: ${({ theme }) => theme.colors.mainBg};
   flex: 1;
+  overflow: hidden;
 
   .internetIcon {
     position: absolute;

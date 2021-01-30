@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
 
 // Components
@@ -20,8 +21,6 @@ export default function Result() {
     }
     localStorage.removeItem('results');
   }, []);
-
-  console.log(storageResult);
 
   const end = Date.now() + (3 * 1000);
   function frame() {
@@ -83,6 +82,33 @@ export default function Result() {
                   // eslint-disable-next-line max-len
                   : storageResult.map((result, index) => <p>Questão {index + 1}: {'  '} {db.questions[index].alternatives[db.questions[index].answer]}</p>)}
               </div>
+            </Widget.Content>
+          </Widget>
+        </QuizContainer>
+
+        <QuizContainer
+          style={{
+            position: 'absolute',
+            right: '0',
+          }}
+        >
+          <Widget
+            as={motion.section}
+            transition={{ delay: 3.5, duration: 0.5 }}
+            variants={{
+              show: { opacity: 1 },
+              hidden: { opacity: 0 },
+            }}
+            initial="hidden"
+            animate="show"
+          >
+            <Widget.Content>
+              <div>
+                <h3><a href="https://www.linkedin.com/in/jo%C3%A3o-maroeli-dos-santos-645314196/" target="_blank" rel="noreferrer"><i className="fab fa-github-square" /> Github</a></h3>
+                <h3><a href="https://github.com/JohnMaroe" target="_blank" rel="noreferrer"><i className="fab fa-linkedin" /> LinkedIn</a></h3>
+                <h3><a href="https://www.alura.com.br/" target="_blank" rel="noreferrer"><i className="fas fa-code" /> Alura</a></h3>
+              </div>
+              <p style={{ marginTop: '40px' }}>Made with love by John &#10084;</p>
             </Widget.Content>
           </Widget>
         </QuizContainer>
