@@ -70,7 +70,7 @@ export default function Result() {
         <QuizContainer
           style={{ float: 'none', margin: 'none' }}
         >
-          <Widget style={{ height: '500px' }}>
+          <Widget style={{ height: '570px' }}>
             <Widget.Header>
               <h1>É isso ai, <strong>{router.query.name}</strong>!</h1>
             </Widget.Header>
